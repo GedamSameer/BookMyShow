@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
+const path = require("path")
 const rateLimit = require("express-rate-limit")
 const helmet = require("helmet")
 const mongoSanitize = require("express-mongo-sanitize")
@@ -49,4 +50,9 @@ app.get("/",(req,res) => {
 })
 app.listen(3001, () => {
     console.log("Server is running")
+})
+const publicPath = path.join(__dirname,"../client/dist")
+app.use(express.static(publicPath))
+app.get("*", (req,res) => {
+    res.sendFile(path.join(publicPath,"index.html"))
 })
