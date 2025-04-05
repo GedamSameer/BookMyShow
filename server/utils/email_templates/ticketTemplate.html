@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket</title>
+    <style>
+        .poster-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .poster-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .detail-item {
+            margin: 8px 0;
+            color: #444;
+        }
+        .detail-item b {
+            color: #222;
+        }
+        .ticket-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .details-container{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="ticket-details">
+            <h2>Movie Ticket</h2>
+            <div class="ticket-content">
+                <div class="poster-container">
+                    <img src="#{posterUrl}"  alt="Movie Poster" />
+                </div>
+                <div class="details-container">
+                    <h3>#{movieName}</h3>
+                    <p class="detail-item">Theatre: <b>#{theatreName}</b></p>
+                    <p class="detail-item">Seats: <b>#{seatsList}</b></p>
+                    <p class="detail-item">Date and Time: <b>#{formattedDate} at #{formattedTime}</b></p>
+                    <p class="detail-item">Amount: <b>Rs. #{totalAmount}</b></p>
+                    <p class="detail-item">Booking Id: <b>#{transactionId}</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Enjoy your Movie!</div>
+    </div>
+</body>
+</html>
